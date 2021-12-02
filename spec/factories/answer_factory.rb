@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: answers
@@ -19,10 +17,3 @@
 #
 #  fk_rails_...  (question_id => questions.id)
 #
-require 'test_helper'
-
-class AnswerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end

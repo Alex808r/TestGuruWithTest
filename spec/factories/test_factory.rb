@@ -22,11 +22,3 @@
 #  fk_rails_...  (author_id => users.id)
 #  fk_rails_...  (category_id => categories.id)
 #
-
-one:
-  title: MyString
-  level: 1
-
-two:
-  title: MyString
-  level: 1

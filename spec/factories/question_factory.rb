@@ -16,9 +16,8 @@
 #
 #  fk_rails_...  (test_id => tests.id)
 #
+FactoryBot.define do
 
-one:
-  body: MyString
-
-two:
-  body: MyString
+  factory :question do
+  end
+end
