@@ -1,0 +1,28 @@
+<tr>
+  <td scope="col" class="text-center">
+    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id} %>
+    <%= render 'form_inline', test: (test == @test ? @test : test) %>
+  </td>
+  <td scope="col" class="text-center"><%= test_level(test) %></td>
+  <td scope="col" class="text-center"><%= test.questions.count %></td>
+
+  <% if test.passing_time?%>
+    <td scope="col" class="text-center"><%= test.passing_time.to_s + " min" %></td>
+  <% else %>
+    <td scope="col" class="text-center">-</td>
+  <% end %>
+
+  <td scope="col" class="text-center"><%= link_to t('shared.links.show'), admin_test_path(test) %></td>
+  <td scope="col" class="text-center">
+    <%= link_to t('shared.links.edit'),
+                edit_admin_test_path(test),
+                data: { test_id: test.id },
+                class: 'form-inline-link' %>
+  </td>
+  <td scope="col" class="text-center">
+    <%= link_to t('shared.links.delete'),
+                admin_test_path(test),
+                method: :delete,
+                data: { confirm: t('shared.delete_confirmation') } %>
+  </td>
+</tr>

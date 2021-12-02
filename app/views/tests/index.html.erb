@@ -1,0 +1,28 @@
+<% provide(:title, 'Tests') %>
+<h1 class="display-4"> <%= I18n.t('tests.index.header') %> </h1>
+
+<p>
+  <%= link_to t('shared.links.user_badges'), badges_path, class: "btn btn-primary" %>
+</p>
+
+<table class="table table-hover">
+  <tr class="table-primary">
+    <th scope="col" class="sort-by-title pointer text-center">
+      <%= t('.title') %>
+    </th>
+    <th scope="col" class="text-center"><%= t('.level') %></th>
+    <th scope="col" class="text-center"><%= t('.count') %></th>
+    <th scope="col" class="text-center"><%= t('.passing_time') %></th>
+
+    <th scope="col" class="text-center"><%= t('.actions') %></th>
+  </tr>
+
+  <%= render @tests  %>
+</table>
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+<% provide(:title, "Question #{@question.id}") %>
+
+<h1> <%= @question.test.title %></h1>
+
+<p>
+  <strong><%= t('.id') %></strong>
+  <%= @question.id %>
+</p>
+
+
+<p>
+  <strong><%= t('.body') %></strong>
+  <%= @question.body %>
+</p>
+
+<%= link_to t('shared.links.edit'), edit_admin_question_path %>
+<%= link_to t('shared.links.back'), admin_test_path(@question.test) %>
+
+<h2> <%= t('.answers') %> </h2>
+
+<%= link_to t('shared.links.new_answer'), new_admin_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers  %>
+  <%#= render partial: 'answers/answer', collection: @question.answers %>
+</ol>

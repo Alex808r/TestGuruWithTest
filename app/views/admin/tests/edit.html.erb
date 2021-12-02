@@ -1,0 +1,7 @@
+<% provide(:title, "Edit #{@test.title}") %>
+
+<h1> <%= t('.edit', title: @test.title) %> </h1>
+
+<%= render 'form' %>
+
+<%= link_to t('shared.links.back'), admin_tests_path %>

@@ -1,0 +1,11 @@
+<% provide(:title, "New Answer") %>
+
+<h1><%= t('.header') %></h1>
+
+<p>
+  <%= @question.body %>
+</p>
+
+<%= render 'form' %>
+
+<%= link_to t('shared.links.back'), admin_question_path(@question) %>
