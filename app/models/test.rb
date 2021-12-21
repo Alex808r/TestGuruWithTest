@@ -33,7 +33,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages
 
   validates :title, presence: true, uniqueness:
-  { scope: :level, message: 'The name and level of the test are already in use' }
+  {scope: :level, message: 'The name and level of the test are already in use' }
 
   validates :level, numericality: { only_integer: true }
   validates :passing_time, presence: true
