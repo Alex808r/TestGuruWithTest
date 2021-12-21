@@ -29,7 +29,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'associations' do
+
+   describe 'associations' do
     it { should have_many(:test_passages).dependent(:destroy) }
     it { should have_many(:tests).through(:test_passages) }
     it { should have_many(:author_tests).class_name('Test').dependent(:destroy) }
