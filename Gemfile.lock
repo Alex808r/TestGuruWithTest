@@ -128,6 +128,9 @@ GEM
     faraday-rack (1.0.0)
     ffi (1.15.4)
     ffi (1.15.4-x64-mingw32)
+    fuubar (2.5.1)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.10)
@@ -348,6 +351,7 @@ DEPENDENCIES
   devise (~> 4.8)
   dotenv-rails
   factory_bot_rails
+  fuubar
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener
