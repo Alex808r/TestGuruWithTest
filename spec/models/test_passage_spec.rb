@@ -29,7 +29,7 @@
 require 'rails_helper'
 
 RSpec.describe TestPassage, type: :model do
-  describe 'associations' do
+  fdescribe 'associations' do
     # it {is_expected.to have_many(:answers)} # аналогичная запись
     it { should belong_to(:user) }
     it { should belong_to(:test) }
