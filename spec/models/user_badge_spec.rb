@@ -23,21 +23,20 @@
 require 'rails_helper'
 
 RSpec.describe UserBadge, type: :model do
-  
   describe 'associations' do
     it { should belong_to(:badge) }
     it { should belong_to(:user) }
   end
 
   describe 'database' do
-    it { should have_db_column(:id).of_type(:integer)}
+    it { should have_db_column(:id).of_type(:integer) }
     it { should have_db_column(:id).with_options(primary: true) }
     it { should have_db_column(:id).with_options(null: false) }
-  
+
     it { should have_db_index(:badge_id) }
     it { should have_db_column(:badge_id).of_type(:integer) }
     it { should have_db_column(:badge_id).with_options(null: false) }
-  
+
     it { should have_db_index(:user_id) }
     it { should have_db_column(:user_id).of_type(:integer) }
     it { should have_db_column(:user_id).with_options(null: false) }
