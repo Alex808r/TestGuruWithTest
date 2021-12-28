@@ -36,9 +36,8 @@ FactoryBot.define do
     "user #{n}"
   end
 
-  before(:create) { |user| user.skip_confirmation! }
-
   factory :user do
+    before(:create) { |user| user.skip_confirmation! }
     email
     name
     password { '12345678' }
