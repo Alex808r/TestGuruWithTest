@@ -21,8 +21,14 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
+  let(:question) { create(:question) }
+
+  it 'factory should be valid' do
+    expect(question).to be_valid
+  end
+
   describe 'associations' do
-    #it {is_expected.to have_many(:answers)} # аналогичная запись
+    # it {is_expected.to have_many(:answers)} # аналогичная запись
     it { should belong_to(:test) }
     it { should have_many(:answers).dependent(:destroy) }
     it { should have_many(:gists).dependent(:destroy) }
@@ -33,7 +39,7 @@ RSpec.describe Question, type: :model do
   end
 
   describe 'database' do
-    it { should have_db_column(:id).of_type(:integer).with_options(primary: true)}
+    it { should have_db_column(:id).of_type(:integer).with_options(primary: true) }
     it { should have_db_column(:id).with_options(null: false) }
 
     it { should have_db_column(:body).of_type(:string).with_options(null: false) }

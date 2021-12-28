@@ -17,7 +17,8 @@
 #  fk_rails_...  (test_id => tests.id)
 #
 FactoryBot.define do
-
   factory :question do
+    association :test
+    body { 'Question 1' }
   end
 end
