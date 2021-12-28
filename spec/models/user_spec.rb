@@ -29,8 +29,20 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let(:user) { create(:user) }
+  let(:admin) { create(:user, :admin) }
 
-   describe 'associations' do
+  it 'admin?' do
+    expect(user.type).to eq('User')
+    expect(admin.type).to eq('Admin')
+  end
+
+  it 'factory should be valid' do
+    # expect(user.valid?).to eq(true) аналогичная запись
+    expect(user).to be_valid
+  end
+
+  describe 'associations' do
     it { should have_many(:test_passages).dependent(:destroy) }
     it { should have_many(:tests).through(:test_passages) }
     it { should have_many(:author_tests).class_name('Test').dependent(:destroy) }
@@ -44,7 +56,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'database' do
-    it { should have_db_column(:id).of_type(:integer)}
+    it { should have_db_column(:id).of_type(:integer) }
     it { should have_db_column(:id).with_options(primary: true) }
     it { should have_db_column(:id).with_options(null: false) }
 
