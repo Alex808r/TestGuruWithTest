@@ -22,3 +22,13 @@
 #  fk_rails_...  (author_id => users.id)
 #  fk_rails_...  (category_id => categories.id)
 #
+
+FactoryBot.define do
+  factory :test do
+    association :author, factory: :user
+    association :category
+
+    title { 'Test 1' }
+    passing_time { '1' }
+  end
+end
