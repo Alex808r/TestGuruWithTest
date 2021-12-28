@@ -26,3 +26,26 @@
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_type                  (type)
 #
+
+FactoryBot.define do
+  sequence :email do |n|
+    "user#{n}@test.com"
+  end
+
+  sequence :name do |n|
+    "user #{n}"
+  end
+
+  before(:create) { |user| user.skip_confirmation! }
+
+  factory :user do
+    email
+    name
+    password { '12345678' }
+    password_confirmation { '12345678' }
+  end
+
+  trait :admin do
+    type { 'Admin' }
+  end
+end
