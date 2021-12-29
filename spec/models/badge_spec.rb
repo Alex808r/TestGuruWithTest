@@ -14,6 +14,12 @@
 require 'rails_helper'
 
 RSpec.describe Badge, type: :model do
+  
+  let(:badge) { create(:badge) }
+  
+  it 'factory should be valid' do
+    expect(badge).to be_valid
+  end
   describe 'validations' do
     it { should validate_presence_of :title }
     it { should validate_presence_of :image_url }
