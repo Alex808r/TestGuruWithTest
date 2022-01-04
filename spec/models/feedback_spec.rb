@@ -15,6 +15,12 @@
 require 'rails_helper'
 
 RSpec.describe Feedback, type: :model do
+  let(:feedback) { create(:feedback) }
+  
+  it 'factory should be valid' do
+    expect(feedback).to be_valid
+  end
+  
   describe 'validations' do
     it { should validate_presence_of :user_name }
     it { should validate_presence_of :email }
